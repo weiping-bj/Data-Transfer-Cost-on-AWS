@@ -45,19 +45,17 @@ S3 流量费 | 跨区域流量费  | 无流量费
 ### 2.1 EC2 和 S3 属于相同区域
 当 EC2 实例和 S3 存储桶处于相同区域时，无论 EC2 实例和 S3 存储桶是否在同一个账号下，都不会产生数据传输的流量费用。全球所有区域（含北京、宁夏）均遵循此规则。  
 
-**1. 费用说明**
-- 相同账号下，相同区域内，EC2 与 S3 之间无数据流量费
+- 相同账号下，相同区域内，EC2 与 S3 之间无数据流量费  
 ![single Account and Single Region](png/02.01-ec2-s3-1region-1account.png)  
 
-- 不同账号下，相同区域内，EC2 与 S3 之间无数据流量费*
-![single Account and Single Region](png/02.02-ec2-s3-1region-2accounts.png)  
-
-**2. 文档参考**
 对于 EC2 到 S3 的流量费用，[官方文档](https://aws.amazon.com/cn/ec2/pricing/on-demand/) （参见“数据传输”部分）说明如下：
 
 >在同一 AWS 区域中的 Amazon S3、Amazon Glacier、Amazon DynamoDB、Amazon SES、Amazon SQS、Amazon Kinesis、Amazon ECR、Amazon SNS、Amazon SimpleDB 和 Amazon EC2 实例之间传输数据是免费的
 
-文档中未明确说明跨账号时的情况。基于个人 2021 年 3 月 23 日测试结果，当处于不同账号时，相同区域内的 EC2 实例向 S3 存储桶传输数据时不产生流量费用。
+- 不同账号下，相同区域内，EC2 与 S3 之间无数据流量费  
+![single Account and Single Region](png/02.02-ec2-s3-1region-2accounts.png)  
+
+EC2 文档中未明确说明跨账号时的情况。基于个人 2021 年 3 月 23 日测试结果，当处于不同账号时，相同区域内的 EC2 实例向 S3 存储桶传输数据时不产生流量费用。
 
 对于 S3 到 EC2 的流量费用，[官方文档](https://aws.amazon.com/cn/s3/pricing/)（参见“数据传输”部分）说明如下：
 
@@ -70,7 +68,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 以下内容以北弗吉尼亚区域（us-east-1）和伦敦区域（eu-west-2）的传输为例进行说明，传输数据为 1 GB。
 
-**1. EC2 和 S3 属于相同账号**
+**- EC2 和 S3 属于相同账号**
 
 *相同账号下，EC2 与 S3 在跨区域传输时的流量费用*  
 ![EC2-S3 in different regions](png/02.03-ec2-s3-2regions-1account.png)  
@@ -78,7 +76,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 当 EC2 向 S3 中上传 1 GB 数据时，会收取从 us-east-1 向 eu-west-2 的流量费 0.02 USD。  
 当 EC2 从 S3 中下载 1 GB 数据时，会收取从 eu-west-2 向 us-east-1 的流量费 0.02 USD。
 
-**2. EC2 和 S3 属于不同账号**  
+**- EC2 和 S3 属于不同账号**  
 
 ![EC2 and S3 in different regsion/accounts](png/02.04-ec2-s3-2regions-2account.png)  
 
