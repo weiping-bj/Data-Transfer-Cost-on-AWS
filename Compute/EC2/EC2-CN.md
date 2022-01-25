@@ -64,7 +64,11 @@ S3 流量费 | 跨区域流量费  | 无流量费
 >传出到 Amazon Elastic Compute Cloud (Amazon EC2) 实例的数据，当实例与 S3 存储桶位于同一 AWS 区域时（包括传输到位于相同 AWS 区域的不同账户时）。
 
 ### 2.2 EC2 和 S3 属于不同区域
-跨区域的数据传输会产生跨区域流量费用，各区域针对跨区域流量传输费用的计费标准不一定相同。以下内容以北弗吉尼亚区域（us-east-1）和伦敦区域（eu-west-2）的传输为例进行说明，传输数据为 1 GB。
+跨区域的数据传输会产生跨区域流量费用。数据传入区域时不收费，传出区域时产生跨区域费用：
+ - 全球各区域间（除北京、宁夏区域）流量费用：0.02 USD/GB，详细说明参见 [EC2 全球定价页面](https://aws.amazon.com/cn/ec2/pricing/on-demand/)  
+ - 北京与宁夏区域间流量费用：0.6003 RMB/GB，详细说明参见 [EC2 中国大陆地区定价页面](https://www.amazonaws.cn/ec2/pricing/)  
+
+以下内容以北弗吉尼亚区域（us-east-1）和伦敦区域（eu-west-2）的传输为例进行说明，传输数据为 1 GB。
 
 **1. EC2 和 S3 属于相同账号**
 
@@ -74,7 +78,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 当 EC2 向 S3 中上传 1 GB 数据时，会收取从 us-east-1 向 eu-west-2 的流量费 0.02 USD。  
 当 EC2 从 S3 中下载 1 GB 数据时，会收取从 eu-west-2 向 us-east-1 的流量费 0.02 USD。
 
-**2. EC2 和 S3 属于不同账号（S3 未开启对方付费功能）**  
+**2. EC2 和 S3 属于不同账号**  
 
 ![EC2 and S3 in different regsion/accounts](png/02.04-ec2-s3-2regions-2account.png)  
 
@@ -83,7 +87,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 Account-1 | 向 S3 上传文件 | EC2 | 从 us-east-1 向 eu-west-2 | 0.02 USD
 Account-2 | 从 S3 下载文件 | S3 | 从 eu-west-2 向 us-east-1 | 0.02 USD
 
-**3. EC2 和 S3 属于不同账号（S3 开启对方付费功能）**    
+S3 还提供
 
 
 [返回目录](#Summary)
