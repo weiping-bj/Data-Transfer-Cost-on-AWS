@@ -24,7 +24,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 * [EC2 <----> EC2]
 
-
+[返回目录](#目录)
 ## EC2 <--> Internet
 中文 ｜ [English](01.EC2-Internet-EN.md)
 
@@ -96,13 +96,6 @@ Account-2 | 从 S3 下载文件 | S3 | 从 eu-west-2 向 us-east-1 | 0.02 USD
 * EC2 和 S3 属于不同账号（S3 开启对方付费功能）  
 
 
+[返回目录](#目录)
 
-
-
-
-
-[【返回目录】](../README-CN.md)
-
-
-
-[【返回目录】](../README-CN.md)
+[【返回目录】](../../README.md)
