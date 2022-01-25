@@ -26,7 +26,6 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 [返回目录](#summary)
 ## EC2 <--> Internet
-中文 ｜ [English](01.EC2-Internet-EN.md)
 
 本节中所提到的“互联网”不包括 AWS 环境下的公共 IP。
 
@@ -49,7 +48,6 @@ S3 流量费 | 跨区域流量费  | 无流量费
 （*截止2021年3月31日，弗吉尼亚北部区域价格参考*）
 
 ## EC2 <--> S3（通过公共 IP 访问）
-中文 ｜ [English](02.EC2-S3-EN.md)
 
 本小节内容仅针对 EC2 和 S3 之间的数据访问，不涉及到 NAT Gateway、VPC Endpoint 等其它服务。
 
@@ -96,6 +94,6 @@ Account-2 | 从 S3 下载文件 | S3 | 从 eu-west-2 向 us-east-1 | 0.02 USD
 * EC2 和 S3 属于不同账号（S3 开启对方付费功能）  
 
 
-[返回目录](#目录)
+[返回目录](#Summary)
 
 [【返回目录】](../../README.md)
