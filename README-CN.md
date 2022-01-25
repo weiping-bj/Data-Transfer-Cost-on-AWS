@@ -1,5 +1,44 @@
-# Data Transfer Cost on AWS
+#Data Transfer Cost on AWS
  
-中文 ｜ [English](README.md)
+中文 ｜ [English](README-EN.md)
 
-这是一篇关于 AWS 流量费用计算的汇总文章。
+本文用来分类说明在不同场景下 AWS 上网络流量的计算方式，您可以根据以下目录快速查找。  
+
+【注意】**本文内容非官方说明，实际费用请以 AWS 账单为准。**
+
+[toc]
+
+#Compute
+##Amazon EC2 
+
+* [EC2 <----> 互联网](EC2/01.EC2-Internet-CN.md)： 
+	
+数据流向 | 互联网 --> EC2 | EC2 --> 互联网
+----|------|----
+EC2 流量费 | 无流量费 | 数据流出费用
+
+*  [EC2 <----> Amazon S3（通过公共 IP 访问）](EC2/02.EC2-S3-CN.md)：
+
+相同区域 | S3 --> EC2 | EC2 --> S3
+----|------|----
+EC2 流量费 | 无流量费 | 无流量费
+S3 流量费 | 无流量费  | 无流量费
+
+跨区域 | S3 --> EC2 | EC2 --> S3
+----|------|----
+EC2 流量费 | 无流量费 | 跨区域流量费
+S3 流量费 | 跨区域流量费  | 无流量费
+
+* [EC2 <----> EC2]
+	
+[返回顶部](#目录)
+## AWS Lambda ##
+
+
+# VPC #
+
+#Storage
+##S3
+
+
+
