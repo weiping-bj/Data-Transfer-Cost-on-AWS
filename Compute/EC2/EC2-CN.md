@@ -87,6 +87,7 @@ Account-2 | 从 S3 下载文件 | S3 | 从 eu-west-2 向 us-east-1 | 0.02 USD
 S3 还提供 [请求者付款](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/userguide/RequesterPaysBuckets.html) 功能。在存储桶上激活该功能后，因下载而产生的数据流量费用由请求下载方（而不是 S3 存储桶的所有者）承担。但在该模式下，S3 存储桶将不允许匿名下载。
 
 以下图为例。Account-1 的 S3 存储桶位于北弗吉尼亚区域（us-east-1），Account-2 的 EC2 实例位于伦敦区域（eu-west-2）。此外，账号 2 还有一台笔记本配置了 IAM User 的 AKSK，该 User 拥有访问 S3 存储桶所需权限。Account-1 开启了“请求者付款”功能。  
+
 ![Requester Pays buckets for different regsion/accounts](png/02.05-ec2-s3-xaccount.png)  
 
 从 S3 存储桶中下载对象所产生的流量费用全部由 Account-2 承担，包括：
@@ -97,5 +98,16 @@ S3 还提供 [请求者付款](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest
 [返回目录](#Summary)
 
 ## 3. EC2 <--> S3（使用 S3 终端节点）
-目前，在 VPC 内可创建两类终端节点：网关类，接口类。
+目前，在 VPC 内可为 S3 创建两类终端节点：网关类，接口类。
+
+- 网关类终端节点不产生使用费用：  
+[AWS PrivateLink 用户手册](https://docs.aws.amazon.com/zh_cn/vpc/latest/privatelink/vpc-endpoints.html) 中明确指出：使用网关类型 VPC 终端节点不会产生数据处理费用或按小时计算的费用。如下图示意：  
+![No cost with Gateway endpoint](png/02.06-ec2-s3-endpoint.png)  
+
+- 接口类网关节点产生端口使用费和数据处理费：  
+使用接口类网关节点时，将会因为 **端口使用时间**、**数据处理量**、**跨可用区数据流量** 而产生费用。前两项为接口类终端节点的标准计费维度，可以从 [AWS PrivateLink定价](https://aws.amazon.com/cn/privatelink/pricing/?nc1=h_ls) 页面中看到全球各区域的详细定价说明（北京区域和宁夏区域参见 [这里](https://www.amazonaws.cn/privatelink/pricing/)）。由于接口类网关节点基于可用区创建，如果在使用过程中出现跨可用区访问，还会产生上述第三项费用。
+
+下图示例中包含两个 EC2 实例，一个 Interface Endpoint。其中一个 EC2 实例与 Interface Endpoint 不在同一可用区内。两个实例分别上传 1 GB 数据，并下载 2 GB 数据。
+![Cost items with Interface endpoint](png/002.07-ec2-s3-privatelink.png)  
+
 [【返回 README】](../../README.md)
