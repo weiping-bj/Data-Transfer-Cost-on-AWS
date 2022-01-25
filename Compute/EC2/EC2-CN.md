@@ -24,7 +24,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 * [EC2 <----> EC2]
 
-[返回目录](#目录)
+[返回目录](#summary)
 ## EC2 <--> Internet
 中文 ｜ [English](01.EC2-Internet-EN.md)
 
@@ -53,7 +53,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 本小节内容仅针对 EC2 和 S3 之间的数据访问，不涉及到 NAT Gateway、VPC Endpoint 等其它服务。
 
-### EC2 和 S3 属于相同区域 ###
+### EC2 和 S3 属于相同区域
 任何方向都没有数据传输费用，全球所有区域（含北京、宁夏）均遵循此规则。  
 
 ![single Account and Single Region](png/02.01-ec2-s3-1region-1account.png)  
@@ -72,7 +72,7 @@ S3 流量费 | 跨区域流量费  | 无流量费
 
 >传出到 Amazon Elastic Compute Cloud (Amazon EC2) 实例的数据，当实例与 S3 存储桶位于同一 AWS 区域时（包括传输到位于相同 AWS 区域的不同账户时）。
 
-### EC2 和 S3 属于不同区域###
+### EC2 和 S3 属于不同区域
 跨区域的数据传输会产生跨区域流量费用，各区域针对跨区域流量传输费用的计费标准不一定相同。以下内容以北弗吉尼亚区域（us-east-1）和伦敦区域（eu-west-2）的传输为例进行说明，传输数据为 1 GB。
 
 * EC2 和 S3 属于相同账号
