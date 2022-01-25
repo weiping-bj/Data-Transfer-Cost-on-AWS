@@ -102,12 +102,14 @@ S3 还提供 [请求者付款](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest
 
 - 网关类终端节点不产生使用费用：  
 [AWS PrivateLink 用户手册](https://docs.aws.amazon.com/zh_cn/vpc/latest/privatelink/vpc-endpoints.html) 中明确指出：使用网关类型 VPC 终端节点不会产生数据处理费用或按小时计算的费用。如下图示意：  
+
 ![No cost with Gateway endpoint](png/02.06-ec2-s3-endpoint.png)  
 
 - 接口类网关节点产生端口使用费和数据处理费：  
 使用接口类网关节点时，将会因为 **端口使用时间**、**数据处理量**、**跨可用区数据流量** 而产生费用。前两项为接口类终端节点的标准计费维度，可以从 [AWS PrivateLink定价](https://aws.amazon.com/cn/privatelink/pricing/?nc1=h_ls) 页面中看到全球各区域的详细定价说明（北京区域和宁夏区域参见 [这里](https://www.amazonaws.cn/privatelink/pricing/)）。由于接口类网关节点基于可用区创建，如果在使用过程中出现跨可用区访问，还会产生上述第三项费用。
 
-下图示例中包含两个 EC2 实例，一个 Interface Endpoint。其中一个 EC2 实例与 Interface Endpoint 不在同一可用区内。两个实例分别上传 1 GB 数据，并下载 2 GB 数据。
-![Cost items with Interface endpoint](png/002.07-ec2-s3-privatelink.png)  
+下图示例中包含两个 EC2 实例，一个 Interface Endpoint。其中一个 EC2 实例与 Interface Endpoint 不在同一可用区内。两个实例分别上传 1 GB 数据，并下载 2 GB 数据。  
+
+![Cost items with Interface endpoint](png/02.07-ec2-s3-privatelink.png)  
 
 [【返回 README】](../../README.md)
