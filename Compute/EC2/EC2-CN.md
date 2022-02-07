@@ -16,6 +16,7 @@
   - 4.2 [当 EC2 实例处于相同区域的不同可用区](#42-当-ec2-实例处于相同区域的不同可用区)
   - 4.3 [当 EC2 实例处于不同区域时](#43-当-ec2-实例处于不同区域时)
 - 5. [EC2 <--> CloudFront](#5-ec2----cloudfront)
+- 6. [EC2 <--> Other Serivces](#6-ec2----other-serivces)
 
 本章参考了官网中以下费用计算说明：
 
@@ -182,6 +183,20 @@ Instance-2 产生的费用：
 在 AWS 中国大陆地区，数据从边缘站点传出时，传输到互联网和传输到源服务器的费用均为 0.30866 ¥/GB。
 
 ![cfn transfer cost in China Mainland](png/05.02-EC2-cf-cn.png)
+
+[返回顶部](#Summary)
+
+## 6. EC2 <--> Other Serivces
+
+在不考虑使用了 NAT Gateway、Interface Gateway、Transit Gateway 等网络服务的情况下，EC2 和相同区域内的以下 AWS 服务之间无流量传输费用：
+
+>在同一 AWS 区域中的 Amazon S3、Amazon EBS 直接 API、Amazon Glacier、Amazon DynamoDB、Amazon SES、Amazon SQS、Amazon Kinesis、Amazon ECR、Amazon SNS、Amazon SimpleDB 和 Amazon EC2 实例之间直接传输数据是免费的。
+
+![EC2 to other serivces in one region](png/06.EC2-others.png)  
+
+如希望 EC2 通过 AWS 内部网络访问上述服务，需要在 VPC 内创建终端节点。详细内容参见 VCP 部分说明。
+
+EC2 与 ELB 的流量成本，参见 ELB 章节.
 
 [返回顶部](#Summary)
 

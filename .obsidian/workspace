@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "faccbd18a7eda767",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb8f203133f0c0cc",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Networking/VPC/VPC-CN.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1e6410f825798eda",
+    "type": "split",
+    "children": [
+      {
+        "id": "e828732f315123d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "402d5aac65ed6968",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "7796e466db4336a1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a4845778d0b6a0cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e50147e0f6bae8c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d86b57196020f374",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Networking/VPC/VPC-CN.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "bb8f203133f0c0cc",
+  "lastOpenFiles": [
+    "Networking/VPC/VPC-CN.md"
+  ]
+}
