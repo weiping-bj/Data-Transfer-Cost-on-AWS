@@ -8,8 +8,8 @@
 
 For a quick search of how network transport costs are calculated on AWS in different scenarios, you may follow the catalog below. 
 
-- [Amazon EC2](Compute/EC2/EC2.md): Transfer costs about EC2 to the Internet, EC2 to EC2, EC2 to AWS services (S3, CloudFront, etc.).
-- [Amazon VPC](Networking/VPC/VPC.md): VPC Peering, NAT Gateway, and VPC Endpoint;
-- [DX & VPN](Networking/Connection/Connection.md): DX, DX Gateway, SiteLink, Site-to-Site VPN;
-- [AWS Transit Gateway](Networking/TGW/TGW.md): TGW transformation costs in cross AZ, cross Region, and cross Accounts;
-- [Content Delivery](Networking/ContentDelivery/ContentDelivery.md)：CloudFront, Global Accelerator
+- [Amazon EC2](Compute/EC2/EC2-EN.md): Transfer costs about EC2 to the Internet, EC2 to EC2, EC2 to AWS services (S3, CloudFront, etc.).
+- [Amazon VPC](Networking/VPC/VPC-EN.md): VPC Peering, NAT Gateway, and VPC Endpoint;
+- [DX & VPN](Networking/Connection/Connection-EN.md): DX, DX Gateway, SiteLink, Site-to-Site VPN;
+- [AWS Transit Gateway](Networking/TGW/TGW-EN.md): TGW transformation costs in cross AZ, cross Region, and cross Accounts;
+- [Content Delivery](Networking/ContentDelivery/ContentDelivery-EN.md)：CloudFront, Global Accelerator
