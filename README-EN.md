@@ -1,7 +1,15 @@
 # Data Transfer Cost on AWS
  
-English | [中文](README-CN.md)
+[中文](README.md) | English
 
-**NOTE:** **The content of this repository is NOT an official description, please refer to AWS billing for actual costs.**
+**NOTE:** **The content of this repository is NOT an official interpretation. The repository is intended to help people understand the components of AWS data transfer costs and to provide an estimate of the costs that may be incurred. please refer to AWS billing for actual costs incurred.**
 
-This repository is used to categorize how network traffic is calculated on AWS in different scenarios, and you can quickly find it according to the following table of contents.
+**All diagrams are just for the convenience of illustrating the components of traffic costs, and should NOT be used as a reference for actual network architecture design.**
+
+For a quick search of how network transport costs are calculated on AWS in different scenarios, you may follow the catalog below. 
+
+- [Amazon EC2](Compute/EC2/EC2-CN.md): Transfer costs about EC2 to the Internet, EC2 to EC2, EC2 to AWS services (S3, CloudFront, etc.).
+- [Amazon VPC](Networking/VPC/VPC-CN.md): VPC Peering, NAT Gateway, and VPC Endpoint;
+- [DX & VPN](Networking/Connection/Connection-CN.md): DX, DX Gateway, SiteLink, Site-to-Site VPN;
+- [AWS Transit Gateway](Networking/TGW/TGW-CN.md): TGW transformation costs in cross AZ, cross Region, and cross Accounts;
+- [Content Delivery](Networking/ContentDelivery/ContentDelivery-CN.md)：CloudFront, Global Accelerator

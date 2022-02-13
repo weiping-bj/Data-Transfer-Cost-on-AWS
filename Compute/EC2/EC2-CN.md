@@ -1,5 +1,6 @@
 # Amazon EC2 Data Transfer Cost
 
+中文 ｜ [English](EC2-EN.md)
 ## Summary
 
 本章内容总结了 EC2 几种典型应用场景下，数据传输所产生的费用计算方式。包含如下场景：
@@ -21,9 +22,9 @@
 本章参考了官网中以下费用计算说明：
 
 - EC2 计费说明：[全球区域](https://aws.amazon.com/cn/ec2/pricing/on-demand/)，[宁夏、北京区域](https://www.amazonaws.cn/ec2/pricing/)；
-- S3 计费说明：[全球区域](https://aws.amazon.com/cn/s3/pricing/?nc=sn&loc=4)，[宁夏、北京区域](https://www.amazonaws.cn/s3/pricing/)；
+- S3 计费说明：[全球区域](https://aws.amazon.com/cn/s3/pricing/)，[宁夏、北京区域](https://www.amazonaws.cn/s3/pricing/)；
 - PrivateLink 计费说明：[全球区域](https://aws.amazon.com/cn/privatelink/pricing/)，[宁夏、北京区域](https://www.amazonaws.cn/privatelink/pricing/)；
-- CloudFront 计费说明：[全球区域](https://aws.amazon.com/cn/cloudfront/pricing/?nc=sn&loc=3)，[宁夏、北京区域](https://www.amazonaws.cn/cloudfront/pricing/?nc1=h_ls)
+- CloudFront 计费说明：[全球区域](https://aws.amazon.com/cn/cloudfront/pricing/)，[宁夏、北京区域](https://www.amazonaws.cn/cloudfront/pricing/)
 
 ## 1. EC2 <--> Internet
 
@@ -48,8 +49,8 @@
 EC2 到 S3 的 [数据传输](https://aws.amazon.com/cn/ec2/pricing/on-demand/) 费用说明：  
 >在同一 AWS 区域中的 Amazon S3、Amazon Glacier、Amazon DynamoDB、Amazon SES、Amazon SQS、Amazon Kinesis、Amazon ECR、Amazon SNS、Amazon SimpleDB 和 Amazon EC2 实例之间传输数据是免费的
 
-S3 到 EC2 的 [数据传输](https://aws.amazon.com/cn/s3/pricing/) 费用说明：  
->传出到 Amazon Elastic Compute Cloud (Amazon EC2) 实例的数据，当实例与 S3 存储桶位于同一 AWS 区域时（包括传输到位于相同 AWS 区域的不同账户时）。
+S3 到 EC2 的 [数据传输](https://aws.amazon.com/cn/s3/pricing/) 费用说明指出，以下情况无需支付费用：  
+>传从 Amazon S3 存储桶传输到与 S3 存储桶相同的 AWS 区域内的任何 AWS 服务的数据（包括至同一 AWS 区域中不同的账户）。
 
 ![EC2-S3 Single Region](png/02.01-ec2-s3-1-region.png)  
 
@@ -58,7 +59,7 @@ S3 到 EC2 的 [数据传输](https://aws.amazon.com/cn/s3/pricing/) 费用说�
 ### 2.2 EC2 和 S3 属于不同区域
 跨区域的数据传输会产生跨区域流量费用。数据传入区域时不收费，传出区域时产生跨区域费用：
 
- - 全球各区域间（除北京、宁夏区域）流量费用：0.02 USD/GB，详细说明参见 [EC2 全球定价页面](https://aws.amazon.com/cn/ec2/pricing/on-demand/)  
+ - 全球各区域间（除北京、宁夏区域）流量费用：根据源和目标区域决定，详细说明参见 [EC2 全球定价页面](https://aws.amazon.com/cn/ec2/pricing/on-demand/)  
  - 北京与宁夏区域间流量费用：0.6003 RMB/GB，详细说明参见 [EC2 中国大陆地区定价页面](https://www.amazonaws.cn/ec2/pricing/)  
 
 以下内容以北弗吉尼亚区域（us-east-1）和伦敦区域（eu-west-2）的传输为例进行说明。
@@ -95,7 +96,7 @@ Account-1 的 S3 存储桶位于北弗吉尼亚区域（us-east-1），Account-2
 
 ## 3. EC2 <--> S3（使用 S3 终端节点）
 
-目前，在 VPC 内可为 S3 创建两类终端节点：网关类，接口类。
+您可以使用两种类型的 VPC 终端节点访问 Amazon S3：*网关终端节点* 和 *接口终端节点*。*网关终端节点* 是您在路由表中指定的网关，用于通过 AWS 网络从 VPC 访问 Amazon S3。*接口终端节点* 通过私有 IP 地址将请求从您的 VPC 内部、本地或其他 AWS 区域 中的 VPC 使用 VPC 对等连接或 AWS Transit Gateway 路由到 Amazon S3，从而扩展 *网关终端节点* 的功能。
 
 ### 3.1 网关类终端节点费用
 
@@ -109,9 +110,9 @@ Account-1 的 S3 存储桶位于北弗吉尼亚区域（us-east-1），Account-2
 
 ### 3.2 接口类终端节点费用
 
-使用接口类网关节点时，将会因为 **端口使用时间**、**数据处理量**、**跨可用区数据流量** 而产生费用。
+使用接口类终端节点时，将会因为 **每个可用区每个 VPC 终端节点使用时间**、**AWS 区域每月处理的数据**、**跨可用区数据流量** 而产生费用。
 
-**端口使用时间** 和 **数据处理量** 为接口类终端节点的标准计费维度，可以从 [AWS PrivateLink定价](https://aws.amazon.com/cn/privatelink/pricing/?nc1=h_ls) 页面中看到全球各区域的详细定价说明（北京区域和宁夏区域参见 [这里](https://www.amazonaws.cn/privatelink/pricing/)）。由于接口类网关节点基于可用区创建，如果在使用过程中出现跨可用区访问，还会产生 **跨可用区数据流量** 费用。  
+**每个可用区每个 VPC 终端节点使用时间** 和 **AWS 区域每月处理的数据** 为接口类终端节点的标准计费维度，可以从 [AWS PrivateLink定价](https://aws.amazon.com/cn/privatelink/pricing/) 页面中看到全球各区域的详细定价说明（北京区域和宁夏区域参见 [这里](https://www.amazonaws.cn/privatelink/pricing/)）。由于接口类网关节点基于可用区创建，如果在使用过程中出现跨可用区访问，还会产生 **跨可用区数据流量** 费用。  
 
 下图示例中包含两个 EC2 实例，一个 Interface Endpoint。其中一个 EC2 实例与 Interface Endpoint 不在同一可用区内。两个实例分别上传 1 GB 数据，并下载 2 GB 数据。  
 
@@ -121,16 +122,18 @@ Account-1 的 S3 存储桶位于北弗吉尼亚区域（us-east-1），Account-2
 
 Instance-1 产生的费用：  
 
-  * instance endpoint 流量处理费 = 0.01 x 3GB（上传、下载均计费） = 0.03 USD；  
-  * instance endpoint 时长费用 = 0.01 x 1 = 0.01 USD；  
-合计：0.04 USD
+  * 接口终端节点流量处理费 = 0.01 x 3GB（上传、下载均计费） = 0.03 USD；  
+  * 接口终端节点时长费用 = 0.01 x 1 = 0.01 USD；  
+
+合计：0.03 + 0.01 = 0.04 USD
 
 Instance-2 产生的费用：  
 
-  * instance endpoint 流量处理费 = 0.01 x 3GB（上传、下载均计费） = 0.03 USD；  
-  * instance endpoint 时长费用 = 0.01 x 1 = 0.01 USD；  
-  * 跨可用区间流量处理费用 = 0.01 x 3GB（任意方向流量均计算在内） = 0.03 USD；  
-合计：0.07 USD  
+  * 接口终端节点流量处理费 = 0.01 x 3GB（上传、下载均计费） = 0.03 USD；  
+  * 接口终端节点时长费用 = 0.01 x 1 = 0.01 USD；（如果 Instance-1 和 Instance-2 在同一小时内下载对象，则时长费用不用重复计算）  
+  * 跨可用区间流量处理费用 = 0.01 x 2 x 2GB（Interface Endpoint ENI  -> Instance-2）+ 0.01 x 2 x 2GB（Instance-2 -> IIterface Endpoint eni） = 0.06 USD；  
+
+合计：0.03 + 0.01 + 0.06 = 0.10 USD  
 
 [返回顶部](#Summary)
 ## 4. EC2 <--> EC2
@@ -140,7 +143,7 @@ Instance-2 产生的费用：
 
 [在同一 AWS 区域内传输数据](https://aws.amazon.com/cn/ec2/pricing/on-demand/) 时：
 
->IPv4：对于从公有或弹性 IPv4 地址“传入”和“传出”的数据，每个方向均按 0.01 USD/GB 的标准收费。
+>IPv4：对于从公有或弹性 IPv4 地址“传入”和“传出”的数据，每个方向均按 0.01 USD/GB 的标准收费。  
 >IPv6：对于从其他 VPC 中的 IPv6 地址“传入”和“传出”的数据，每个方向均按 0.01 USD/GB 的标准收费。
 
 如果相同区域内的两个 VPC 建立了 VPC 对等连接，[对等连接本身免费](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html#vpc-peering-pricing)，根据 AWS 在 2021 年 5 月的 [声明](https://aws.amazon.com/cn/about-aws/whats-new/2021/05/amazon-vpc-announces-pricing-change-for-vpc-peering/):
@@ -155,8 +158,6 @@ Instance-2 产生的费用：
 
 >对于从 Amazon EC2、Amazon RDS、Amazon Redshift、Amazon DynamoDB Accelerator (DAX) 和 Amazon ElastiCache 实例、弹性网络接口或同一 AWS 区域内各可用区或的 VPC 对等连接“传入”和“传出”的数据，每个方向均按 0.01 USD/GB 的标准收费。
 
-无论 EC2 实例间使用哪种 IP 地址进行通均遵循上述收费模式。 
-
 ![EC2 data transfer cost corss AZs](png/04.02-EC2-xaz.png)  
 
 ### 4.3 当 EC2 实例处于不同区域时
@@ -169,14 +170,14 @@ Instance-2 产生的费用：
 
 ## 5. EC2 <--> CloudFront
 
-根据 CloudFront [价格说明](https://aws.amazon.com/cn/cloudfront/pricing/?nc=sn&loc=3)：
+根据 CloudFront [价格说明](https://aws.amazon.com/cn/cloudfront/pricing/)：
 
->CloudFront 对从边缘站点传出的数据流量以及 HTTP 或 HTTPS 请求收费。
+>CloudFront 对从边缘站点传出的数据流量以及 HTTP 或 HTTPS 请求收费。  
 >与 AWS 集成后，从任何 AWS 源（例如 Amazon Simple Storage Service (S3)、Amazon Elastic Compute Cloud (EC2) 或 Elastic Load Balancer）执行来源获取都无需支付传输费用。
 
 但是，从 CloudFront 边缘站点向源站传输数据时，即使源站为 AWS 服务，仍然需要支付流量传输费用。
 
-在 AWS 全球区域，数据从边缘站点传出时，传输到互联网和传输到源服务器的费用不一定相同。
+在 AWS 全球区域，数据从边缘站点传出时，传输到互联网和传输到源服务器的费用不同。
 
 ![cfn transfer cost in global](png/05.01-EC2-cf-global.png)
 
@@ -194,9 +195,7 @@ Instance-2 产生的费用：
 
 ![EC2 to other serivces in one region](png/06.EC2-others.png)  
 
-如希望 EC2 通过 AWS 内部网络访问上述服务，需要在 VPC 内创建终端节点。详细内容参见 VCP 部分说明。
-
-EC2 与 ELB 的流量成本，参见 ELB 章节.
+如希望 EC2 通过 AWS 内部网络访问上述服务，需要在 VPC 内创建终端节点。详细内容参见 [VCP 部分](../../Networking/VPC/VPC-CN.md)说明。
 
 [返回顶部](#Summary)
 
