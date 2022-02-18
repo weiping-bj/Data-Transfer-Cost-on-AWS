@@ -17,7 +17,7 @@
   - 4.2 [当 EC2 实例处于相同区域的不同可用区](#42-当-ec2-实例处于相同区域的不同可用区)
   - 4.3 [当 EC2 实例处于不同区域时](#43-当-ec2-实例处于不同区域时)
 - 5. [EC2 <--> CloudFront](#5-ec2----cloudfront)
-- 6. [EC2 <--> Other Serivces](#6-ec2----other-serivces)
+- 6. [EC2 <--> Other Services](#6-ec2----other-services)
 
 本章参考了官网中以下费用计算说明：
 
@@ -131,7 +131,7 @@ Instance-2 产生的费用：
 
   * 接口终端节点流量处理费 = 0.01 x 3GB（上传、下载均计费） = 0.03 USD；  
   * 接口终端节点时长费用 = 0.01 x 1 = 0.01 USD；（如果 Instance-1 和 Instance-2 在同一小时内下载对象，则时长费用不用重复计算）  
-  * 跨可用区间流量处理费用 = 0.01 x 2 x 2GB（Interface Endpoint ENI  -> Instance-2）+ 0.01 x 2 x 2GB（Instance-2 -> IIterface Endpoint eni） = 0.06 USD；  
+  * 跨可用区间流量处理费用 = 0.01 x 2 x 2GB（Interface Endpoint ENI  -> Instance-2）+ 0.01 x 2 x 2GB（Instance-2 -> Interface Endpoint ENI） = 0.06 USD；  
 
 合计：0.03 + 0.01 + 0.06 = 0.10 USD  
 
@@ -187,7 +187,7 @@ Instance-2 产生的费用：
 
 [返回顶部](#Summary)
 
-## 6. EC2 <--> Other Serivces
+## 6. EC2 <--> Other Services
 
 在不考虑使用了 NAT Gateway、Interface Gateway、Transit Gateway 等网络服务的情况下，EC2 和相同区域内的以下 AWS 服务之间无流量传输费用：
 

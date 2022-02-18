@@ -50,6 +50,7 @@
   - 仅访问同区域内的 S3：0.045 x 1（NAT-GW 使用时间）+ 0.045 x (2+1)（NAT-GW 处理数据量） + 0.01 x 2 x 2（跨 AZ 下载） + 0.01 x 2 x 1（跨 AZ 上传） = 0.24 $
 
 关于跨 AZ 访问时流量计费的说明，也可参考本文档中 [EC2 流量说明](../../Compute/EC2/EC2-CN.md#42-ec2-instances-across-different-az) 章节。
+
 [返回顶部](#summary)
 
 ## 3. VPC Endpoint

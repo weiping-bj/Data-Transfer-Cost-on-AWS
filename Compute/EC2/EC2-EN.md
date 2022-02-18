@@ -18,7 +18,7 @@ This page summarizes the cost calculation of EC2 data transfer in several typica
   - 4.2 [EC2 instances across different AZ](#42-ec2-instances-across-different-az)
   - 4.3 [EC2 instances across different Regions](#43-ec2-instances-across-different-regions)
 - 5. [EC2 <--> CloudFront](#5-ec2----cloudfront)
-- 6. [EC2 <--> Other Serivces](#6-ec2----other-serivces)
+- 6. [EC2 <--> Other Services](#6-ec2----other-services)
 
 The following costing instructions from the official website are referenced in this page:
 
@@ -193,7 +193,7 @@ In AWS Mainland China regions, data costs 0.30866 ¥/GB for both outbound direct
 
 [Back to Top](#Summary)
 
-## 6. EC2 <--> Other Serivces
+## 6. EC2 <--> Other Services
 
 No data transfer costs between EC2 and the following AWS services in the same region if you do not use NAT Gateway, Interface Gateway, Transit Gateway, etc.
 
