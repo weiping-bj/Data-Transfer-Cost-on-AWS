@@ -13,7 +13,7 @@ This page summarizes the cost calculation of EC2 data transfer in several typica
 - 3. [EC2 <--> S3 (with S3 endpoint)](#3-ec2----s3-with-s3-endpoint)
   - 3.1 [Gateway Endpoint Pricing](#31-gateway-endpoint-pricing)
   - 3.2 [Interface Endpoint Pricing](#32-interface-endpoint-pricing)
-- 4. [EC2 <--> EC2](#3-ec2----ec2)
+- 4. [EC2 <--> EC2](#4-ec2----ec2)
   - 4.1 [EC2 instnaces within the same AZ](#41-ec2-instnaces-within-the-same-az)
   - 4.2 [EC2 instances across different AZ](#42-ec2-instances-across-different-az)
   - 4.3 [EC2 instances across different Regions](#43-ec2-instances-across-different-regions)
