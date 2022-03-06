@@ -35,7 +35,7 @@ When using the same **capacity**, **port hours costs** are different between [De
 
 ![DX](png/01.dx.png)
 
-In the diagram, a company establishes one 1Gbps dedicated connection to DX Location in the US and one in Japan. Assume that within 1 hour, the local data center downloads 2GB data from the EC2 instance in Japan, 4GB data from the EC2 instance in the US, and ach of the two EC2 instances downloads 10GB data from local data center. The DX costs incurred are as follows:
+In the figure, a company establishes one 1Gbps dedicated connection to DX Location in the US and one in Japan. Assume that within 1 hour, the local data center downloads 2GB data from the EC2 instance in Japan, 4GB data from the EC2 instance in the US, and ach of the two EC2 instances downloads 10GB data from local data center. The DX costs incurred are as follows:
 
 - Port hours: 0.3 x 1 (US rate) + 0.285 x 1 (Japan rate) = 0.585 $
 - Instance-1 Data Transfer OUT Cost: 0.02 x 4 (US rate) = 0.08 $
@@ -56,7 +56,7 @@ But You will pay applicable egress data charges based on the source remote AWS R
 
 ![DX Gateway](png/02.dx-gw.png)
 
-In the diagram, a company establishes a dedicated 1Gbps connection using DX Location in the U.S. and connects to the VPCs in N.Virginia region (IAD) and Tokyo region (NRT) via DX Gateway. Assume that in 1 hour, the local data center downloads 2GB data from the EC2 instance in NRT, 4GB data from the EC2 instance in IAD, and each of the two EC2 instances downloads 10GB data from the local data center.  The DX costs incurred are as follows:
+In the figure, a company establishes a dedicated 1Gbps connection using DX Location in the U.S. and connects to the VPCs in N.Virginia region (IAD) and Tokyo region (NRT) via DX Gateway. Assume that in 1 hour, the local data center downloads 2GB data from the EC2 instance in NRT, 4GB data from the EC2 instance in IAD, and each of the two EC2 instances downloads 10GB data from the local data center.  The DX costs incurred are as follows:
 
 - Port hours: 0.3 x 1 = 0.3$
 - Instance-1 Data Transfer OUT Cost: 0.02 x 4 = 0.08 $
@@ -79,7 +79,7 @@ In addition to the billing dimension of DX, there are two factors that determine
 
 ![SiteLink](png/03.sitelink.png)
 
-In the diagram, a company has local data centers in the US, UK, and Japan, and three regions on AWS - IAD, LHR, and NRT. Each data center is connected to AWS via a dedicated 1Gbps DX.
+In the figure, a company has local data centers in the US, UK, and Japan, and three regions on AWS - IAD, LHR, and NRT. Each data center is connected to AWS via a dedicated 1Gbps DX.
 
 One VIF with SiteLink enabled was created on each of the two DX links in the US and the UK, and the VIF with SiteLink disabled created on the DX link in Japan.
 
@@ -92,7 +92,7 @@ Assume that in 1 hour, the US data center sends 10GB data to the UK data center 
 
 Total: 0.885 + 1 + 0.423 = 2.308 $
 
->If TGW is enabled, the hourly cost of TGW should be counted. The diagram adds a set of VPCs to the DX Gateway via TGW to the IAD for the purpose of illustrating SiteLink's support for Transit VIF and Private VIF, and is not intended to be used as a reference for actual network design.
+>If TGW is enabled, the hourly cost of TGW should be counted. The figure adds a set of VPCs to the DX Gateway via TGW to the IAD for the purpose of illustrating SiteLink's support for Transit VIF and Private VIF, and is not intended to be used as a reference for actual network design.
 
 [Back to Top](#summary)
 
@@ -110,7 +110,7 @@ The data transfer costs incurred by the VPN service follow the standard EC2 data
 
 ![VPN Standard](png/04.01-vpn-standard.png)
 
-In the diagram, the customer has established a Site-to-Site VPN connection between the local data center and the AWS IAD region, consisting of two VPN tunnels. Assuming that the customer downloads 10GB data from AWS and uploads 5GB data in 1 hour, the network transfer costs incurred include:
+In the figure, the customer has established a Site-to-Site VPN connection between the local data center and the AWS IAD region, consisting of two VPN tunnels. Assuming that the customer downloads 10GB data from AWS and uploads 5GB data in 1 hour, the network transfer costs incurred include:
 
 - VPN Connection hours cost: 0.05 x 1 = 0.05 $ (Each VPN connection contains two VPN tunnels and is only billed for the time each VPN connection is used)
 - Data Transfer cost: 0.09 x 10 (Data Transfer OUT) + 0 x 5 (Data Transfer IN is free) = 0.9 $

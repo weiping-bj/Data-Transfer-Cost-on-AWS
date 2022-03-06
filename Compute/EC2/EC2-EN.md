@@ -29,7 +29,7 @@ The following costing instructions from the official website are referenced in t
 
 ## 1. EC2 <--> Internet
 
-The **Internet** refferred to in this page means a network consisting of public IPs that are not part of AWS. When EC2 communicates with the Internet, the costs are as shown in the following diagram.
+The **Internet** refferred to in this page means a network consisting of public IPs that are not part of AWS. When EC2 communicates with the Internet, the costs are as shown in the following figure.
 
 ![EC2-Internet](png/01.ec2-inernet.png "EC2<-->Internet")
 

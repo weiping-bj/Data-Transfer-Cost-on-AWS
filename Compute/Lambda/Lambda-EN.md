@@ -20,11 +20,11 @@ The billing principles for data transfer costs for Lambda functions are the same
 
 >Data transferred “in” to and “out” of your AWS Lambda functions, from outside the region the function executed, will be charged at the Amazon EC2 data transfer rates as listed under "[Data transfer](https://aws.amazon.com/ec2/pricing/on-demand/)".
 
-Which means that transferring data from Lambda functions to the Internet will incur standard Data Transfer Out charges, while accessing other AWS services in the same region will not incur charges. The following diagram illustrates an example in N.Virginia (us-east-1):
+Which means that transferring data from Lambda functions to the Internet will incur standard Data Transfer Out charges, while accessing other AWS services in the same region will not incur charges. The following figure illustrates an example in N.Virginia (us-east-1):
 
 ![Lambda to public resources](png/01.Function-Public.png)
 
-When accessing resources within other regions, inter-region data transfer costs are charged for Lambda functions. The diagram shows the data transfer cost between N.Virginia region (us-east-1) and Tokyo region (ap-northeast-1).
+When accessing resources within other regions, inter-region data transfer costs are charged for Lambda functions. The figure shows the data transfer cost between N.Virginia region (us-east-1) and Tokyo region (ap-northeast-1).
 
 [Back to Top](#summary)
 
@@ -38,7 +38,7 @@ If Lambda function needs to access to the private resources deployed in your VPC
 
 However, through personal testing, Lambda functions may incur data transfer costs across AZs when accessing resources within the VPC.
 
-Assuming that when configuring the Lambda function to access the VPC, you choose subnets located in multiple AZs, the data transfer traffic as shown in the following diagram is possible:
+Assuming that when configuring the Lambda function to access the VPC, you choose subnets located in multiple AZs, the data transfer traffic as shown in the following figure is possible:
 
 ![Lambda to VPC](png/02.01-Function-VPC-allAZ.png)
 

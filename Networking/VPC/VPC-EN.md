@@ -26,7 +26,7 @@ If VPC Peering is set up across regions, [cross region data transfer costs](http
 
 ![VPC peering](png/01.VPC-peering.png)
 
-There three VPCs shown in the diagram, VPC-1, have peering connections with VPC-2 and VPC-A. The data transfer costs between VPC-1 and VPC-2 follow data transfer cost rules within the same region, while VPC-1 and VPC-A incur cross region data transfer costs. Since no peering connection is established between VPC-A and VPC-2, they cannot communicate with each other using private IPs, but only through public IPs, and the resulting data transfer charges still follow the cross-region traffic charge rate.
+There three VPCs shown in the figure, VPC-1, have peering connections with VPC-2 and VPC-A. The data transfer costs between VPC-1 and VPC-2 follow data transfer cost rules within the same region, while VPC-1 and VPC-A incur cross region data transfer costs. Since no peering connection is established between VPC-A and VPC-2, they cannot communicate with each other using private IPs, but only through public IPs, and the resulting data transfer charges still follow the cross-region traffic charge rate.
 
 [Back to Top](#summary)
 
@@ -40,7 +40,7 @@ In addition, EC2 data transfer costs should be counted as well: data tranfser OU
 
 ![NAT Gateway](png/02.NAT-GW.png)
 
-Within 1 hour period, downloading 2GB data and uploading 1GB data, the data transfer costs are respectively calculated as follows for the two EC2 instances in the diagram when accessing third-party resources and S3 in the same region:  
+Within 1 hour period, downloading 2GB data and uploading 1GB data, the data transfer costs are respectively calculated as follows for the two EC2 instances in the figure when accessing third-party resources and S3 in the same region:  
 
 - Instance-1 is used alone: 
   - Only access to 3rd Party Site: 0.045 x 1 (NAT-GW Hourly Charge) + 0.045 x (NAT-GW Data Processing Charge, 2GB+1GB) + 0.09 x 1 (Data Transfer OUT) = 0.27 $
@@ -65,7 +65,7 @@ As to interface endpoint, there are two billing dimensions: creation time (bille
 
 ![Interface Endpoint](png/03.VPC-endpoint.png)
 
-In the diagram, aa company creates interface endpoints for S3 in two AZs, AZ-1 and AZ-2. The EC2 instance in AZ-3 downloads 2GB data and uploads 1GB data from the S3 storage bucket in the same zone via the interface endpoint in AZ-2. The data transfer costs in one hour consist of:
+In the figure, aa company creates interface endpoints for S3 in two AZs, AZ-1 and AZ-2. The EC2 instance in AZ-3 downloads 2GB data and uploads 1GB data from the S3 storage bucket in the same zone via the interface endpoint in AZ-2. The data transfer costs in one hour consist of:
 
 - Interface Endpoint per VPC endpoint per AZ: 0.01 x 1 x 2 (in two AZs, run 1 hour)= 0.02 $;  
 - Interfacce Endpoint Data Processed: 0.01 x 3 (both upload and download) = 0.03 $；

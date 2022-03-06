@@ -43,7 +43,7 @@ Global Accelerator consists of two billing dimensions:
 
 ![Global Accelerator Data Transfer Cost](png/02.GA.png)
 
-In the diagram, a company has deployed their applications on AWS IAD region, accelerated through GA for end users across worldwide. The end-users are located in the United States (40%), Japan (30%), Australia (20%), and South Africa (10%). Depending on dominant direction of data traffic, the composition of the transfer cost calculation varies slightly. The following section shows an example of data transfer costs for a 1-hour period (data transfer surcharges are calculated on an hourly basis).
+In this figure, a company has deployed their applications on AWS IAD region, accelerated through GA for end users across worldwide. The end-users are located in the United States (40%), Japan (30%), Australia (20%), and South Africa (10%). Depending on dominant direction of data traffic, the composition of the transfer cost calculation varies slightly. The following section shows an example of data transfer costs for a 1-hour period (data transfer surcharges are calculated on an hourly basis).
 
 ### 2.1 Data Transfer OUT is dominant direction
 
