@@ -12,4 +12,5 @@
 - [Amazon VPC](Networking/VPC/VPC-CN.md)：包含 VPC Peering、NAT Gateway、VPC Endpoint 的传输成本说明；
 - [DX & VPN](Networking/Connection/Connection-CN.md)：包含 DX、DX Gateway、SiteLink、Site-to-Site VPN 的传输成本说明；
 - [AWS Transit Gateway](Networking/TGW/TGW-CN.md)：包含在跨 AZ、跨 Region、跨账号场景下的传输成本说明；
-- [Content Delivery](Networking/ContentDelivery/ContentDelivery-CN.md)：包含 CloudFront、Global Accelerator 的传输成本说明。
+- [Content Delivery](Networking/ContentDelivery/ContentDelivery-CN.md)：包含 CloudFront、Global Accelerator 的传输成本说明；
+- [AWS Lambda](Compute/Lambda/Lambda-CN.md)：包含 Lambda 服务访问公共互联网、通过公共 IP 访问 AWS 服务、访问 VPC 内部资源的传输成本说明。
