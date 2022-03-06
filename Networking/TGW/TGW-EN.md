@@ -25,7 +25,7 @@ Transit Gateway itself has two billing dimensions:
 
 ![TGW Standard Cost Model](png/01.tgw-standard.png)
 
-In the diagram, a company deployed their applicaion on AWS N.Virginia reion, two EC2 instances are located in different VPCs within the same AZ. Two VPCs are connected via TGW. Another TGW has no attachment. Assuming that Instance-1 sends 10GB data to Instance-2, and Instance-2 sends 5GB data to Instance-1 within 1 hour, the data transfer costs incurred in this 1 hour consist of: 
+In the figure, a company deployed their applicaion on AWS N.Virginia reion, two EC2 instances are located in different VPCs within the same AZ. Two VPCs are connected via TGW. Another TGW has no attachment. Assuming that Instance-1 sends 10GB data to Instance-2, and Instance-2 sends 5GB data to Instance-1 within 1 hour, the data transfer costs incurred in this 1 hour consist of: 
 
 - TGW Attachment hours: 0.05 x 2 (two attachments) = 0.1 $
 - TGW Data processed: 0.02 x 10 (Instanc-1 -> Instance-2) + 0.02 x 5 (Instance-2 -> Instance-1) = 0.3 $
@@ -42,7 +42,7 @@ When attaching multiple VPCs to TGW and creating eni in each AZ, TGW will first 
 
 ![TGW Cross AZ Cost Model](png/02.tgw-x-az.png)
 
-In the diagram, two VPCs are connected via TGW, and both AZs (AZ-a and AZ-b) are checked when creating TGW attachments.  
+In the figure, two VPCs are connected via TGW, and both AZs (AZ-a and AZ-b) are checked when creating TGW attachments.  
 
 - When Instance-1 sends data to Instance-2, the traffic path is: Instance-1 -> eni-1-a -> TGW -> eni-2-a -> Instance-2;  
 - When Instance-2 sends data to Instance-1, the traffic path is: Instance-2 -> eni-2-b -> TGW -> eni-1-b -> Instance-1
@@ -59,7 +59,7 @@ On the other hand, if you choose the only AZ where the target instance is locate
 
 ![TGW Cross AZ Cost Model](png/02.tgw-x-az-singleAZ.png)
 
-In the diagram, two VPCs are connected via TGW. and both AZs (AZ-a and AZ-b) are checked when creating TGW attachments.  
+In the figure, two VPCs are connected via TGW. and both AZs (AZ-a and AZ-b) are checked when creating TGW attachments.  
 两个 VPC 通过 TGW 关联。When creating TGW attachments, different AZ were checked in each attachment, AZ-a from VPC-1, AZ-a and AZ-b from VPC-2.
 
 - When Instance-1 sends data to Instance-2, the traffic path is: Instance-1 -> eni-1-a -> TGW -> eni-2-a -> Instance-2;  
@@ -91,7 +91,7 @@ After creation of TGW peering attachment cross different regions, it is still po
 
 ![TGW Cross Region Cost Model](png/03.tgw-x-region.png)
 
-In the diagram, a company creates resources on AWS N.Virginia region (IAD) and Tokyo region (NRT), and establishes peering attachments between TGWs. Assuming that in a 1-hour period, instances in the IAD region send 10GB data to instances in the NRT region, and instances in the NRT region sends 5GB data to instances in the IAD region, the total network cost composition is as follows:  
+In the figure, a company creates resources on AWS N.Virginia region (IAD) and Tokyo region (NRT), and establishes peering attachments between TGWs. Assuming that in a 1-hour period, instances in the IAD region send 10GB data to instances in the NRT region, and instances in the NRT region sends 5GB data to instances in the IAD region, the total network cost composition is as follows:  
 
 - TGW Attachment hours: 0.05 x 2 (from TGW in IAD) + 0.07 x 2 (from TGW in NRT) = 0.24 $
 - TGW Data processed: 0.02 x 10 (Data Transfer OUT from Instance-1) + 0 x 5 (Data from TGW in NRT) + 0.02 x 5 (Data Transfer OUT from Instance-2) + 0 x 10 (Data from TGW in IAD) = 0.3 $
@@ -118,7 +118,7 @@ When attaching to a VPN, Site-to-Site VPN hourly usage fees will still be charge
 
 ![TGW Cross Account Cost Model](png/04.tgw-x-account.png)
 
-In the diagram, the hourly rate is drawn in the corresponding Account box
+In the figure, the hourly rate is drawn in the corresponding Account box
 
 [Back to Top](#summary)
 
