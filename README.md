@@ -13,4 +13,5 @@
 - [DX & VPN](Networking/Connection/Connection-CN.md)：包含 DX、DX Gateway、SiteLink、Site-to-Site VPN 的传输成本说明；
 - [AWS Transit Gateway](Networking/TGW/TGW-CN.md)：包含在跨 AZ、跨 Region、跨账号场景下的传输成本说明；
 - [Content Delivery](Networking/ContentDelivery/ContentDelivery-CN.md)：包含 CloudFront、Global Accelerator 的传输成本说明；
-- [AWS Lambda](Compute/Lambda/Lambda-CN.md)：包含 Lambda 服务访问公共互联网、通过公共 IP 访问 AWS 服务、访问 VPC 内部资源的传输成本说明。
+- [AWS Lambda](Compute/Lambda/Lambda-CN.md)：包含 Lambda 服务访问公共互联网、通过公共 IP 访问 AWS 服务、访问 VPC 内部资源的传输成本说明；
+- [EKS & ECS](Compute/Container/Container-CN.md)：对使用 CNI 插件时，EKS/ECS 的网络通信方式进行简要介绍，并对拉取镜像时几种不同场景下的数据传输成本进行了说明。
