@@ -71,9 +71,7 @@ So I tend to think that Aurora does not incur cross-AZ data transfer costs on th
 
 ### 1.3 Access database cross region
 
-VPC Peering can also be established between two VPCs across regions, and when accessing the database across regions, both the source/destination will be billed at the inter-regional data transfer cost. 
-
-跨区域的两个 VPC 之间也可以建立 VPC Peering。在跨区域访问数据库时，源/目标都将按照区域间的数据传输成本进行计费。Detail instructions are listed in this repository, [Amazon EC2 Data Transfer Cost](../../Compute/EC2/EC2-EN.md#43-ec2-instances-across-different-regions).
+VPC Peering can also be established between two VPCs across regions, and when accessing the database across regions, both the source/destination will be billed at the inter-regional data transfer cost.  Detail instructions are listed in this repository, [Amazon EC2 Data Transfer Cost](../../Compute/EC2/EC2-EN.md#43-ec2-instances-across-different-regions).
 
 ![Access cross VPC](png/01.03-Access-cross-Region.png)
 
