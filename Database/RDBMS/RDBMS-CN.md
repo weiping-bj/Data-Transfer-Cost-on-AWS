@@ -18,7 +18,7 @@
 - Amazon RDS 计费说明：[全球区域](https://aws.amazon.com/cn/rds/pricing/)，[宁夏、北京区域](https://www.amazonaws.cn/rds/pricing/)；
 - Amazon Aurora 计费说明：[全球区域](https://aws.amazon.com/cn/rds/aurora/pricing/)，[宁夏、北京区域](https://www.amazonaws.cn/rds/aurora/pricing/)
 
-**注意：**本篇内容一律使用 <mark>MySQL 兼容</mark> 的数据库引擎为例进行说明。不同数据库引擎所支持的功能不同，本篇内容中所用的示意图不能视为实际应用中架构设计的参考。
+**注意：** 本篇内容一律使用 <mark>MySQL 兼容</mark> 的数据库引擎为例进行说明。不同数据库引擎所支持的功能不同，本篇内容中所用的示意图不能视为实际应用中架构设计的参考。
 
 ## 1. Database Access Data Transfer
 
