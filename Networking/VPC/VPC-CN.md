@@ -69,11 +69,9 @@
 
 - 接口终端节点时长费用：0.01 x 1 x 2（2 个 AZ 内创建了 endpoint，创建了 1 小时）= 0.02 $；
 - 接口终端节点流量处理费：0.01 x 3（合计处理了 3GB 数据）= 0.03 $；
-- 跨可用区间流量处理费用：0.01 x 2 x 2GB（Interface Endpoint ENI -> Instance）+ 0.01 x 2 x 1GB（Instance -> Interface Endpoint ENI）= 0.06 $
+- ~跨可用区间流量处理费用：0.01 x 2 x 2GB（Interface Endpoint ENI -> Instance）+ 0.01 x 2 x 1GB（Instance -> Interface Endpoint ENI）= 0.06 $~ (**根据 AWS [声明](https://aws.amazon.com/cn/about-aws/whats-new/2022/04/aws-data-transfer-price-reduction-privatelink-transit-gateway-client-vpn-services/)，自 2022 年 4 月 1 日起不再收取 PrivateLink 的跨可用区流量传输费**)
 
-合计：0.02 + 0.03 + 0.06 = 0.11 $
-
-*如果在多个 AZ 内创建了 Interface Endpoint，可以通过指定具体某个接口的来避免跨 AZ 流量的产生。*
+合计：0.02 + 0.03 ~+ 0.06~ = 0.05 $
 
 [返回顶部](#summary)
 

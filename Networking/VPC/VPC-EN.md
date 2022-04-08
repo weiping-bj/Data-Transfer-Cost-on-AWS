@@ -69,11 +69,9 @@ In the figure, aa company creates interface endpoints for S3 in two AZs, AZ-1 an
 
 - Interface Endpoint per VPC endpoint per AZ: 0.01 x 1 x 2 (in two AZs, run 1 hour)= 0.02 $;  
 - Interfacce Endpoint Data Processed: 0.01 x 3 (both upload and download) = 0.03 $；
-- Data Transfer cross AZ : 0.01 x 2 x 2GB (Interface Endpoint ENI -> Instance) + 0.01 x 2 x 1GB (Instance -> Interface Endpoint ENI) = 0.06 $
+- ~Data Transfer cross AZ : 0.01 x 2 x 2GB (Interface Endpoint ENI -> Instance) + 0.01 x 2 x 1GB (Instance -> Interface Endpoint ENI) = 0.06 $~ (**According to AWS [Statement](https://aws.amazon.com/cn/about-aws/whats-new/2022/04/aws-data-transfer-price-reduction-privatelink-transit-gateway-client-vpn-services/), All inter-Availability Zone (AZ) data transfer charges associated with accessing services via a VPC Interface Endpoint (powered by AWS PrivateLink) are free of charge since 2022-04-01**)
 
-Total: 0.02 + 0.03 + 0.06 = 0.11 $
-
-*You may save cross AZ costs by pointing the specific interface if the Interface Endpoint is created cross multiple AZs.*
+Total: 0.02 + 0.03 ~+ 0.06~ = 0.05 $
 
 [Back to Top](#summary)
 
