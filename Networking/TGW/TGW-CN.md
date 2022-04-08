@@ -34,9 +34,11 @@ TGW 自身的计费规则包含两个维度：
 
 [返回顶部](#summary)
 
-## 2. 跨 AZ 收费 
+## 2. 跨 AZ 收费
 
-在 [标准收费](#标准收费) 中，两个通信的 EC2 实例位于相同可用区内。如果两个 EC2 实例位于不同可用区，除了 TGW 费用外，根据 TGW 在创建关联时方式的不同，还可能会产生跨可用区流量费用。
+**更新：根据 AWS 在 2022 年 4 月 7 日的 [声明](https://aws.amazon.com/cn/about-aws/whats-new/2022/04/aws-data-transfer-price-reduction-privatelink-transit-gateway-client-vpn-services/)，自 2022 年 4 月 1 日起，使用 TGW 时将不再收取跨 AZ 流量传输费，流量处理费仍正常收取。**
+
+在 [标准收费](#标准收费) 中，两个通信的 EC2 实例位于相同可用区内。如果两个 EC2 实例位于不同可用区，除了 TGW 费用外，根据 TGW 在创建关联时方式的不同，还可能会产生跨可用区流量。但自 2022 年 4 月 1 日起，使用 TGW 时产生的跨可用区传输流量将不再收费。
 
 当使用 TGW 关联多个 VPC 时，如果 TGW 在所有 AZ 内均创建了 eni，TGW 会首先将流量路由到相同可用区内对应的 eni 中。如下图：
 
@@ -51,9 +53,9 @@ TGW 自身的计费规则包含两个维度：
 
 - TGW 连接的小时费：0.05 x 2（2 个 Attachment）= 0.1 $
 - TGW 流量处理费：0.02 x 10（Instanc-1 -> Instance-2）+ 0.02 x 5（Instance-2 -> Instance-1）= 0.3 $
-- 跨可用区流量处理费：0.01 x 10（eni-2-a OUT）+ 0.01 x 10（Instance-2 IN）+ 0.01 x 5（eni-1-b OUT）+ 0.01 x 5（Instance-1 IN）= 0.3 $
+- ~跨可用区流量处理费：0.01 x 10（eni-2-a OUT）+ 0.01 x 10（Instance-2 IN）+ 0.01 x 5（eni-1-b OUT）+ 0.01 x 5（Instance-1 IN）= 0.3 $~（**这部分费用自 2022 年 4 月 1 日起，不再收取**）
 
-合计：0.1 + 0.3 + 0.3 = 0.7 $
+合计：0.1 + 0.3 ~+ 0.3~ = 0.4 $
 
 然而，当创建 TGW 关联时，只选择了目标实例所在的可用区时，流量可以被直接路由到目标可用区。如下图：
 
@@ -68,9 +70,9 @@ TGW 自身的计费规则包含两个维度：
 
 - TGW 连接的小时费：0.05 x 2（2 个 Attachment）= 0.1 $
 - TGW 流量处理费：0.02 x 10（Instanc-1 -> Instance-2）+ 0.02 x 5（Instance-2 -> Instance-1）= 0.3 $
-- 跨可用区流量传输费：0.01 x 10（eni-2-a OUT）+ 0.01 x 10（Instance-2 IN）+ 0.01 x 5（eni-1-b OUT）+ 0.01 x 5（Instance-1 IN）= 0.3 $
+- ~跨可用区流量传输费：0.01 x 10（eni-2-a OUT）+ 0.01 x 10（Instance-2 IN）= 0.2 $~（**这部分费用自 2022 年 4 月 1 日起，不再收取**）
 
-合计：0.1 + 0.3 + 0.2 = 0.6 $
+合计：0.1 + 0.3 ~+ 0.2~ = 0.4 $
 
 **注意**：在 [Transit Gateway 文档](https://docs.aws.amazon.com/zh_cn/vpc/latest/tgw/tgw-vpc-attachments.html) 中，关于可用区与网络流量的说明仅有以下内容：
 
