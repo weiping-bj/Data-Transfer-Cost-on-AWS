@@ -36,6 +36,8 @@ Total: 0.1 + 0.3 = 0.4 $
 
 ## 2. Cross AZ Pricing
 
+**Update: According to an AWS [statement](https://aws.amazon.com/cn/about-aws/whats-new/2022/04/aws-data-transfer-price-reduction-privatelink-transit-gateway-client-vpn-services/) dated 2022-04-07, since 2002-04-01, All data transfer charges across Availability Zones (AZs) over private IP address within the same AWS Region via Transit Gateway are now free of charge. Transit Gateway data processing charges will continue to be charged.**
+
 In [Standard Pricing](#1-standard-pricing), two EC2 instances are located in different AZs. In this scenario, in addition to TGW costs, there may be cross-AZ data transfer costs depending on how TGW was used. 
 
 When attaching multiple VPCs to TGW and creating eni in each AZ, TGW will first route the data traffic to the corresponding eni in the same AZ. As shown in the figure below:   
@@ -51,9 +53,9 @@ As a result, cross-AZ costs are incurred in addition to TGW traffic processing c
 
 - TGW Attachment hours: 0.05 x 2 (two attachments) = 0.1 $
 - TGW Data processed: 0.02 x 10 (Instanc-1 -> Instance-2) + 0.02 x 5 (Instance-2 -> Instance-1) = 0.3 $
-- Cross-AZ data transfer: 0.01 x 10 (eni-2-a OUT) + 0.01 x 10 (Instance-2 IN) + 0.01 x 5 (eni-1-b OUT) + 0.01 x 5 (Instance-1 IN) = 0.3 $
+- ~Cross-AZ data transfer: 0.01 x 10 (eni-2-a OUT) + 0.01 x 10 (Instance-2 IN) + 0.01 x 5 (eni-1-b OUT) + 0.01 x 5 (Instance-1 IN) = 0.3 $~ (**No longer be charged since 2022-04-01**)
 
-Total: 0.1 + 0.3 + 0.3 = 0.7 $
+Total: 0.1 + 0.3 ~+ 0.3~ = 0.4 $
 
 On the other hand, if you choose the only AZ where the target instance is located when creating TGW attachment, data traffic could be routed directly to the target AZ. As shown in the figure below:  
 
@@ -69,9 +71,9 @@ Assuming that Instance-1 sends 10GB data to Instance-2 and Instance-2 sends 5GB 
 
 - TGW Attachment hours: 0.05 x 2 (two attachments) = 0.1 $
 - TGW Data processed: 0.02 x 10 (Instanc-1 -> Instance-2) + 0.02 x 5 (Instance-2 -> Instance-1) = 0.3 $
-- Cross-AZ data transfer: 0.01 x 10 (eni-2-a OUT) + 0.01 x 10 (Instance-2 IN) + 0.01 x 5 (eni-1-b OUT) + 0.01 x 5 (Instance-1 IN) = 0.3 $
+- ~Cross-AZ data transfer: 0.01 x 10 (eni-2-a OUT) + 0.01 x 10 (Instance-2 IN) = 0.2 $~ (No longer be charged since 2022-04-01)
 
-Total: 0.1 + 0.3 + 0.2 = 0.6 $
+Total: 0.1 + 0.3 ~+ 0.2~ = 0.4 $
 
 **NOTE**：In the [Transit Gateway document](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html), the only descriptions of AZ and data traffic are the followig: 
 
