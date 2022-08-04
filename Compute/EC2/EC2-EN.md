@@ -97,6 +97,13 @@ Data transfer costs incurred by downloading objects from S3 storage buckets are 
   - When downloading objects with Laptop configured AKSK, data transfer out fee, 0.09 USD/GB;
   - When downloading objects with Laptop without AKSK, mission failed.
 
+### 2.3 EC2 access S3 via NAT Gateway
+When an EC2 instance is deployed in a private subnet without S3 endpoint, the EC2 instance must access S3 bucket via NAT Gateway. In addition to the costs described in 2.1 and 2.2, NAT Gateway traffic processing fees are added.
+
+![Traffic via NAT gateway](png/02.05-EC2-NAT-S3.png)  
+
+For detail information on calculating traffic processing costs for NAT Gateway, please refer to [HERE](../../Networking/VPC/VPC-CN.md#2-nat-gateway).
+
 [Back to Top](#Summary)
 
 ## 3. EC2 <--> S3 (with S3 endpoint)
