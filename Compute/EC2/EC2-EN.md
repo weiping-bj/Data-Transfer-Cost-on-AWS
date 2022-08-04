@@ -103,7 +103,7 @@ When an EC2 instance is deployed in a private subnet without S3 endpoint, the EC
 
 ![Traffic via NAT gateway](png/02.05-EC2-NAT-S3.png)  
 
-For detail information on calculating traffic processing costs for NAT Gateway, please refer to [HERE](../../Networking/VPC/VPC-CN.md#2-nat-gateway).
+For detail information on calculating traffic processing costs for NAT Gateway, please refer to [HERE](../../Networking/VPC/VPC-EN.md#2-nat-gateway).
 
 [Back to Top](#Summary)
 
