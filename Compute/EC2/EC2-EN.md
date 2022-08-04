@@ -10,6 +10,7 @@ This page summarizes the cost calculation of EC2 data transfer in several typica
 - 2. [EC2 <--> S3 (without S3 endpoint)](#2-ec2----s3-without-s3-endpoint)
   - 2.1 [EC2 and S3 within the same Region](#21-ec2-and-s3-within-the-same-region)
   - 2.2 [EC2 and S3 across different Regions](#22-ec2-and-s3-across-different-regions)
+  - 2.3 [EC2 access S3 via NAT Gateway](#23-ec2-access-s3-via-nat-gateway)
 - 3. [EC2 <--> S3 (with S3 endpoint)](#3-ec2----s3-with-s3-endpoint)
   - 3.1 [Gateway Endpoint Pricing](#31-gateway-endpoint-pricing)
   - 3.2 [Interface Endpoint Pricing](#32-interface-endpoint-pricing)
