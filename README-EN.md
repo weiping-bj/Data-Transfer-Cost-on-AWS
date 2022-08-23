@@ -16,3 +16,4 @@ For a quick search of how network transport costs are calculated on AWS in diffe
 - [AWS Lambda](Compute/Lambda/Lambda-EN.md)：data transfer cost between Lambda and Internet/AWS Services/VPC;
 - [EKS & ECS](Compute/Container/Container-EN.md): A brief introduction to the network communication method of EKS/ECS when using the CNI plug-in, and the data transfer costs for several different scenarios when pulling mirrors;
 - [Amazon RDS](Database/RDBMS/RDBMS-EN.md): A brief introduction to RDS/Aurora. 
+- [NOSQL Database](Database/NOSQL/NOSQL-EN.md): Including descriptions of data transfer costs for three NOSQL database products, Amazon DynamoDB, Amazon DocumentDB, Amazon Keyspaces. 
