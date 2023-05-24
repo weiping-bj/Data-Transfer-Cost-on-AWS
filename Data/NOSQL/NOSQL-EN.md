@@ -15,6 +15,9 @@ AWS offers several common NOSQL databases, including:
 This page provides a detailed description of the data transfer costs for the three products mentioned above, and you can quickly jump to the relevant sections by the following quick links:
 
 - 1. [Amazon DynamoDB](#1-amazon-dynamodb)
+  - 1.1 [Standard Data Transfer](#11-standard-data-transfer)
+  - 1.2 [DDB to/from S3](#12-ddb-tofrom-s3)
+  - 1.3 [DynamoDB Accelerator](#13-dynamodb-accelerator)
 - 2. [Amazon DocumentDB](#2-amazon-documentdb)
 - 3. [Amazon Keyspaces](#3-amazon-keyspaces)
 
