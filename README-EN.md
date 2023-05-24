@@ -17,3 +17,4 @@ For a quick search of how network transport costs are calculated on AWS in diffe
 - [EKS & ECS](Compute/Container/Container-EN.md): A brief introduction to the network communication method of EKS/ECS when using the CNI plug-in, and the data transfer costs for several different scenarios when pulling mirrors;
 - [Amazon RDS](Database/RDBMS/RDBMS-EN.md): A brief introduction to RDS/Aurora. 
 - [NOSQL Database](Database/NOSQL/NOSQL-EN.md): Including descriptions of data transfer costs for three NOSQL database products, Amazon DynamoDB, Amazon DocumentDB, Amazon Keyspaces. 
+- [Amazon S3][Storage/S3/S3-EN.md]：Including descriptions of data transfer costs for S3 Multi-Region Access Points and S3 Transfer Acceleration.

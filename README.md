@@ -17,3 +17,4 @@
 - [EKS & ECS](Compute/Container/Container-CN.md)：对使用 CNI 插件时，EKS/ECS 的网络通信方式进行简要介绍，并对拉取镜像时几种不同场景下的数据传输成本进行了说明。
 - [Amazon RDS](Database/RDBMS/RDBMS-CN.md)：针对 RDS/Aurora 的数据传输成本进行说明。
 - [NOSQL 类数据库](Database/NOSQL/NOSQL-CN.md)：包含三种 NOSQL 数据库产品的数据传输成本说明，Amazon DynamoDB, Amazon DocumentDB, Amazon Keyspaces。
+- [Amazon S3][Storage/S3/S3-CN.md]：包含 S3 Multi-Region Access Points 和 S3 Transfer Acceleration 的数据传输成本说明。
