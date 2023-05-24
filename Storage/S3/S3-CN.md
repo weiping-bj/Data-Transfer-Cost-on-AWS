@@ -56,7 +56,7 @@
 
 当应用程序部署在 AWS 上时，需要根据应用程序和 S3 存储桶的位置计算流量费用。如下图所示：
 
-![EC2 to Multi-Region Access Point](png/02.01-Function-VPC-allAZ.png)
+![EC2 to Multi-Region Access Point](png/02.01-EC2-mAccess.png)
 
 图中 App-Virginia 会被多区域访问点路由到临近的存储桶 Bucket-Virginia 上，并上传 10GB 数据。
 

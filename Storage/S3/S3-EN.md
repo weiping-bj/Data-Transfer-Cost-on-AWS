@@ -56,7 +56,7 @@ The composition of data transfer costs are different depending on where the appl
 
 When an application is deployed on AWS, data transfer costs are calculated based on the location of the application and S3 bucket. This is shown in the figure below:
 
-![EC2 to Multi-Region Access Point](png/02.01-Function-VPC-allAZ.png)
+![EC2 to Multi-Region Access Point](png/02.01-EC2-mAccess.png)
 
 App-Virginia is routed by the multi-region access point to the adjacent S3 bucket, Bucket-Virginia, and uploads 10GB data.
 
