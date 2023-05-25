@@ -1,4 +1,4 @@
-# AWS Lambda Data Transfer Cost
+# Amazon S3 Data Transfer Cost
 
 中文 ｜ [English](S3-EN.md)
 
@@ -10,7 +10,7 @@
 
 在本章节中将包含如下场景：
 
-- [AWS Lambda Data Transfer Cost](#aws-lambda-data-transfer-cost)
+- [Amazon S3 Data Transfer Cost](#amazon-s3-data-transfer-cost)
   - [Summary](#summary)
   - [1. S3 Cross Region Replication](#1-s3-cross-region-replication)
   - [2. Multi-Region Access Points](#2-multi-region-access-points)
